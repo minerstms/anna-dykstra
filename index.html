@@ -3,13 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>anna-dykstra</title>
+  <title>Anna's Would You Rather</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <div class="flash" id="flash" aria-hidden="true"></div>
+  <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+
   <main class="page">
-    <h1 class="title">anna-dykstra — static site pipeline ready</h1>
-    <p class="text">This placeholder site is ready for a new project.</p>
+    <h1 class="brand">Anna's Would You Rather</h1>
+    <p class="tagline">Pick one. Celebrate. See the crowd.</p>
+    <p class="prompt" id="prompt">Would you rather...</p>
+
+    <div class="choices" id="choices">
+      <button class="choice choice-a" id="choiceA" type="button"></button>
+      <p class="or-badge">or</p>
+      <button class="choice choice-b" id="choiceB" type="button"></button>
+    </div>
+
+    <section class="results" id="results" aria-live="polite">
+      <h2 class="results-title">What other players chose</h2>
+      <div class="stat-row">
+        <p class="stat-label" id="labelA"></p>
+        <div class="stat-bar-track">
+          <div class="stat-bar-fill a" id="barA"></div>
+        </div>
+        <p class="stat-percent" id="percentA"></p>
+      </div>
+      <div class="stat-row">
+        <p class="stat-label" id="labelB"></p>
+        <div class="stat-bar-track">
+          <div class="stat-bar-fill b" id="barB"></div>
+        </div>
+        <p class="stat-percent" id="percentB"></p>
+      </div>
+      <button class="next-btn" id="nextBtn" type="button">Next jackpot question</button>
+    </section>
+
+    <button class="sound-btn" id="soundBtn" type="button">Sound: On</button>
+    <p class="footer-note">Made with rainbow energy by Anna</p>
   </main>
+
+  <script src="assets/questions.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
